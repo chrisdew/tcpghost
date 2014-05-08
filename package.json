@@ -1,0 +1,29 @@
+{
+  "name": "tcpghost",
+  "version": "0.0.1",
+  "description": "A drop-in replacement for net.createServer which uses pcap to create a tee, clone or ghost connection.",
+  "main": "tcpghost.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chrisdew/tcpghost.git"
+  },
+  "keywords": [
+    "tcp",
+    "ghost",
+    "connection",
+    "clone",
+    "tee"
+  ],
+  "author": "Chris Dew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisdew/tcpghost/issues"
+  },
+  "homepage": "https://github.com/chrisdew/tcpghost",
+  "dependencies": {
+    "pcap": "git://github.com/chrisdew/node_pcap.git"
+  }
+}
