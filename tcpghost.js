@@ -26,7 +26,7 @@ util.inherits(Server, events.EventEmitter);
 
 Server.prototype.listen = function(port, host) {
   //console.log('listening', port, host, this.options);
-  var pcap_session = pcap.createSession(this.options.pcap.nic, 'tcp port 7777');
+  var pcap_session = pcap.createSession(this.options.pcap.nic, 'tcp port ' + port);
   var tracker = new pcap.TCP_tracker();
   tracker.on('start', (function(session) {
     //console.log('tracker start', JSON.stringify(session));
