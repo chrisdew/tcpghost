@@ -7,13 +7,13 @@ A drop-in replacement for net.createServer which uses pcap to create ghost conne
 Scope
 -----
 
-This modules was written for the following circumstance - if your problem is similar, it may work for you too.
+This module was written for the following circumstance - if your problem is similar, it may work for you too.
 
 I have an old daemon in production which is accepting TCP connections, where the source IP address is of vital importance.
 
 I want to test a replacement daemon (written in NodeJS) but cannot bind to the TCP port, as it is already in use by the old daemon.
 
-Normally I would insert a tee (npm install duplicator) to do this job.  Unfortunately this has the side affect of making all TCP connection appear to orginate at localhost, whichis unacceptable.
+Normally I would insert a tee (`sudo npm install duplicator -g`) to do this job.  Unfortunately this has the side affect of making all TCP connection appear to orginate at localhost, which is unacceptable.
 
 
 Solution
