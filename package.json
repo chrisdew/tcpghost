@@ -1,7 +1,7 @@
 {
   "name": "tcpghost",
-  "version": "0.0.1",
-  "description": "A drop-in replacement for net.createServer which uses pcap to create a tee, clone or ghost connection.",
+  "version": "0.0.3",
+  "description": "A drop-in replacement for net.createServer which uses pcap to create ghost connections (also known as tees or clones).",
   "main": "tcpghost.js",
   "scripts": {
     "test": "mocha"

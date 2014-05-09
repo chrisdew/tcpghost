@@ -25,26 +25,28 @@ function Server(arg0, arg1) {
 util.inherits(Server, events.EventEmitter);
 
 Server.prototype.listen = function(port, host) {
-  console.log('listening', port, host, this.options);
+  //console.log('listening', port, host, this.options);
   var pcap_session = pcap.createSession(this.options.pcap.nic, 'tcp port 7777');
   var tracker = new pcap.TCP_tracker();
   tracker.on('start', (function(session) {
-    console.log('tracker start', JSON.stringify(session));
+    //console.log('tracker start', JSON.stringify(session));
     var sock = new Socket(session);
     this.socketsBySessionKey[session.key] = sock;
     this.emit('connection', sock);
   }).bind(this));
-  tracker.on('end', function(session) {
-    console.log('tracker end', JSON.stringify(session));
-  });
+  tracker.on('end', (function(session) {
+    var sock = this.socketsBySessionKey[session.key];
+    //console.log('tracker end', JSON.stringify(session));
+    sock.emit('end');
+  }).bind(this));
   tracker.on('received', (function(session, data) {
     var sock = this.socketsBySessionKey[session.key];
-    console.log('tracker received', data, sock);
+    //console.log('tracker received', data, sock);
     sock._emit_data(data);
   }).bind(this));
   pcap_session.on('packet', function(raw) {
     var packet = pcap.decode.packet(raw);
-    console.log('packet', JSON.stringify(packet));
+    //console.log('packet', JSON.stringify(packet));
     tracker.track_packet(packet);
   });
 };

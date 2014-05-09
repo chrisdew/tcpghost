@@ -3,7 +3,7 @@ var net = require('net');
 var real = net.createServer(function(sock) {
   var uri = 'tcp://' + sock.remoteAddress + ':' + sock.remotePort + '/'
           + sock.localAddress + ':' + sock.localPort;
-  console.log('real connection ', uri);
+  console.log('real connection', uri);
   sock.on('data', function(data) {
     console.log('real data from', uri, data);
   });

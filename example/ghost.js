@@ -1,6 +1,6 @@
 var tcpghost = require('../tcpghost');
 
-var ghost = tcphost.createServer(function(sock) {
+var ghost = tcpghost.createServer(function(sock) {
   var uri = 'tcp://' + sock.remoteAddress + ':' + sock.remotePort + '/'
           + sock.localAddress + ':' + sock.localPort;
   console.log('ghost connection', uri);

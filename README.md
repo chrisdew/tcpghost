@@ -1,5 +1,5 @@
-tcpghost
-========
+TCP Ghost
+=========
 
 A drop-in replacement for net.createServer which uses pcap to create ghost connections (also known as tees or clones).
 
@@ -39,6 +39,21 @@ See the example and test directories for more details.
 The duplication of the `net` API means that the new daemon can just have it's `createServer` line modded to test in parallel with an existing server.
 
 Note: There must another process already listening to the port to which you tcpghost binds, otherwise there is no traffic to listen to. 
+
+
+Running the Examples
+--------------------
+
+For this you will need to checkout the git repo.
+
+You will need three terminals.
+
+T1:
+```
+$ git clone https://github.com/chrisdew/tcpghost
+```
+
+To be continued...
 
 
 Warnings
