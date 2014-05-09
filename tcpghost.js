@@ -59,7 +59,7 @@ function Socket(session, localAddress, remotePort, remoteAddress) {
   this.localPort = parseInt(dst[1]);
   this.localAddress = dst[0];
   this.remotePort = parseInt(src[1]);
-  this.remoteAddress = dst[0];
+  this.remoteAddress = src[0];
 }
 util.inherits(Socket, stream.Duplex);
 
