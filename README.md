@@ -13,7 +13,7 @@ I have an old daemon in production which is accepting TCP connections, where the
 
 I want to test a replacement daemon (written in NodeJS) but cannot bind to the TCP port, as it is already in use by the old daemon.
 
-Normally I would insert a tee (`sudo npm install duplicator -g`) to do this job.  Unfortunately this has the side affect of making all TCP connection appear to orginate at localhost, which is unacceptable.
+Normally I would insert a tee (`sudo npm install duplicator -g`) to do this job.  Unfortunately this has the side affect of making all TCP connection appear to orginate at `localhost`, which is unacceptable.
 
 
 Solution
