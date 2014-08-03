@@ -15,6 +15,8 @@ I want to test a replacement daemon (written in NodeJS) but cannot bind to the T
 
 Normally I would insert a tee (`sudo npm install duplicator -g`) to do this job.  Unfortunately this has the side affect of making all TCP connection appear to orginate at `localhost`, which is unacceptable.
 
+Another approach, using iptables's `-j TEE` only tees packets to a different host.
+
 
 Solution
 --------
