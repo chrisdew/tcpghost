@@ -1,7 +1,7 @@
 TCP Ghost
 =========
 
-A drop-in replacement for net.createServer which uses pcap to create ghost connections (also known as tees or clones).
+A drop-in replacement for NodeJS's net.createServer which uses pcap to create ghost connections (also known as tees or clones).
 
 
 Scope
